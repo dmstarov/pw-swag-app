@@ -16,13 +16,22 @@ jobs:
       with:
         dotnet-version: 8.0.x
 
-    # Build the project by specifying the relative path to the .csproj file
+    # Debugging step to verify the current directory and list files
+    - name: Print current directory and list files
+      run: |
+        pwd
+        ls -R
+
+    # Build the project by specifying the correct relative path to the .csproj file
     - name: Build & Install
       run: dotnet build TestProject/TestProject.csproj
 
-    #- name: Ensure browsers are installed
-    #  run: pwsh bin/Debug/net8.0/playwright.ps1 install --with-deps
+    # Ensure browsers are installed by running the PowerShell script
+    - name: Ensure browsers are installed
+      shell: pwsh  # Use PowerShell shell
+      run: |
+        pwsh pw-swag-app/bin/Debug/net8.0/playwright.ps1 install --with-deps
 
-    # Run the tests by specifying the relative path to the .csproj or test project
+    # Run your tests by specifying the relative path to the test project
     - name: Run your tests
       run: dotnet test TestProject/TestProject.csproj
