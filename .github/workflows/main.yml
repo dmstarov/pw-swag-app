@@ -22,16 +22,16 @@ jobs:
         pwd
         ls -R
 
-    # Build the project by specifying the correct relative path to the .csproj file
-   # - name: Build & Install
-   #   run: dotnet build TestProject/TestProject.csproj
+   #  Build the project by specifying the correct relative path to the .csproj file
+    - name: Build & Install
+      run: dotnet build TestProject/TestProject.csproj
 
     # Ensure browsers are installed by running the PowerShell script
-   # - name: Ensure browsers are installed
-   #   shell: pwsh  # Use PowerShell shell
-   #   run: |
-   #     pwsh pw-swag-app/bin/Debug/net8.0/playwright.ps1 install --with-deps
-
+    - name: Ensure browsers are installed
+      shell: pwsh  # Use PowerShell shell
+      run: |
+        pwsh TestProject/bin/Debug/net8.0/playwright.ps1 install --with-deps
+ 
     # Run your tests by specifying the relative path to the test project
     - name: Run your tests
       run: dotnet test TestProject/TestProject.csproj
