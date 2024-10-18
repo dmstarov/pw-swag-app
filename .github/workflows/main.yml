@@ -18,11 +18,11 @@ jobs:
 
     # Build the project by specifying the relative path to the .csproj file
     - name: Build & Install
-      run: dotnet build pw-swag-app/TestProject/TestProject.csproj
+      run: dotnet build TestProject/TestProject.csproj
 
     #- name: Ensure browsers are installed
     #  run: pwsh bin/Debug/net8.0/playwright.ps1 install --with-deps
 
     # Run the tests by specifying the relative path to the .csproj or test project
     - name: Run your tests
-      run: dotnet test pw-swag-app/TestProject/TestProject.csproj
+      run: dotnet test TestProject/TestProject.csproj
