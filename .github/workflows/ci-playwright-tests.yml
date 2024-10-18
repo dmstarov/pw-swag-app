@@ -46,4 +46,4 @@ jobs:
         env:
           SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}  # Using the secret username
           SAUCE_PASSWORD: ${{ secrets.SAUCE_PASSWORD }}  # Using the secret password
-        run: dotnet test --configuration Release --filter "Category=PlaywrightTests"
+        run: dotnet test
