@@ -1,0 +1,49 @@
+
+name: Playwright Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:   
+jobs:
+  run-playwright-tests:
+    runs-on: ubuntu-latest
+
+    
+    steps:
+      
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0'  
+      # Step 3: Install Playwright dependencies
+      - name: Install dependencies
+        run: dotnet restore
+
+      # Step 4: Build the project
+      - name: Build the project
+        run: dotnet build --configuration Release
+
+      # Step 5: Ask for credentials using GitHub Secrets
+      - name: Verify GitHub Secrets
+        run: |
+          if [ -z "${{ secrets.SAUCE_USERNAME }}" ] || [ -z "${{ secrets.SAUCE_PASSWORD }}" ]; then
+            echo "Credentials are not set! Please add them in the repository's secrets."
+            exit 1
+          fi
+        shell: bash
+
+      # Step 6: Run Playwright tests
+      - name: Run Playwright Tests
+        env:
+          SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}  # Using the secret username
+          SAUCE_PASSWORD: ${{ secrets.SAUCE_PASSWORD }}  # Using the secret password
+        run: dotnet test --configuration Release --filter "Category=PlaywrightTests"
