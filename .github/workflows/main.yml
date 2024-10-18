@@ -23,8 +23,8 @@ jobs:
         ls -R
 
     # Build the project by specifying the correct relative path to the .csproj file
-    - name: Build & Install
-      run: dotnet build TestProject/TestProject.csproj
+   # - name: Build & Install
+   #   run: dotnet build TestProject/TestProject.csproj
 
     # Ensure browsers are installed by running the PowerShell script
    # - name: Ensure browsers are installed
