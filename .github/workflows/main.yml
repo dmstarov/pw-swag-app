@@ -3,20 +3,26 @@ on:
   push:
     branches: main
   pull_request:
-    branches:  main
+    branches: main
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+
     - name: Setup dotnet
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
+
+    # Build the project by specifying the relative path to the .csproj file
     - name: Build & Install
-      run: dotnet build
+      run: dotnet build pw-swag-app/TestProject/TestProject.csproj
+
     #- name: Ensure browsers are installed
-     # run: pwsh bin/Debug/net8.0/playwright.ps1 install --with-deps
+    #  run: pwsh bin/Debug/net8.0/playwright.ps1 install --with-deps
+
+    # Run the tests by specifying the relative path to the .csproj or test project
     - name: Run your tests
-      run: dotnet test
+      run: dotnet test pw-swag-app/TestProject/TestProject.csproj
