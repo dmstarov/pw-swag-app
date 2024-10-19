@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "X7owy4vQIJo=",
+  "dgSpecHash": "nUUCIpH3CXQ=",
   "success": true,
-  "projectFilePath": "C:\\udemy_pw\\pw-test\\TestProject\\TestProject.csproj",
+  "projectFilePath": "C:\\udemy_pw\\New folder\\pw-swag-app\\TestProject\\TestProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ad300565\\.nuget\\packages\\coverlet.collector\\6.0.2\\coverlet.collector.6.0.2.nupkg.sha512",
     "C:\\Users\\ad300565\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",

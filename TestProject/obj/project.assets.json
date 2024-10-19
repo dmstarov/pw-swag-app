@@ -1545,11 +1545,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\udemy_pw\\pw-test\\TestProject\\TestProject.csproj",
+      "projectUniqueName": "C:\\udemy_pw\\New folder\\pw-swag-app\\TestProject\\TestProject.csproj",
       "projectName": "TestProject",
-      "projectPath": "C:\\udemy_pw\\pw-test\\TestProject\\TestProject.csproj",
+      "projectPath": "C:\\udemy_pw\\New folder\\pw-swag-app\\TestProject\\TestProject.csproj",
       "packagesPath": "C:\\Users\\ad300565\\.nuget\\packages\\",
-      "outputPath": "C:\\udemy_pw\\pw-test\\TestProject\\obj\\",
+      "outputPath": "C:\\udemy_pw\\New folder\\pw-swag-app\\TestProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ad300565\\AppData\\Roaming\\NuGet\\NuGet.Config",
